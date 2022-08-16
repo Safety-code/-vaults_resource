@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
+
 base_url = "http://pythonjobs.github.io/"
 page = requests.get(base_url)
 soup = BeautifulSoup(page.content, "html.parser")
