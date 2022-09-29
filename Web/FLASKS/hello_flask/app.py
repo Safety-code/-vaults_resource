@@ -2,6 +2,7 @@ from flask import Flask
 from datetime import datetime
 import re
 import app
+from flask import render_template
 
 
 app = Flask(__name__)
@@ -11,11 +12,21 @@ app = Flask(__name__)
 def index():
     return 'Hello World!'
 
+# @app.route('/hello/')
+# @app.route("/hello/<name>")
+# def hello_there(name=None):
+#     now = datetime.now()
+#     formatted_now = now.strftime("%a, %d %b, %y at %X")
+#     'Wednesday, 28 August, 2019 at 15:08:00'
+
+@app.route('/hello/')
 @app.route("/hello/<name>")
-def hello_there(name):
-    now = datetime.now()
-    formatted_now = now.strftime("%a, %d %b, %y at %X")
-    'Wednesday, 28 August, 2019 at 15:08:00'
+def hello_there(name=None):
+    return render_template(
+        "hello_there.html",
+        name=name,
+        date=datetime.now()
+    )
 
 
     #filter the name argument to letters only using regular expressions. URL arguments
