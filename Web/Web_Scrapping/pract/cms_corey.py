@@ -2,14 +2,24 @@ import re
 import requests
 from bs4 import BeautifulSoup
 import lxml
+import csv
+
 
 source = requests.get('https://coreyms.com/').text
+
 soup = BeautifulSoup(source, 'lxml')
 
-for article in soup.find('article'):
+#open a csv file and write the data to it
+csv_file = open('cmms.csv', 'w')
+csv_writer = csv.writer(csv_file)
+csv_writer.writerow(['headline', 'summary', 'video_link'])
+
+
+
+for article in soup.find_all('article'):
     headline = article.h2.a.text
     print(headline)
-    
+
     summary = article.find('div', class_='entry-content').p.text
     print(summary)
     
@@ -24,21 +34,7 @@ for article in soup.find('article'):
     print(yt_link)
     
     print()
-
-headline = article.h2.a.text
-print(headline)
-
-summary = article.find('div', class_='entry-content').p.text
-print(summary)
-
-vid_src = article.find('iframe', class_='youtube-player')['src']
-print(vid_src)
-
-vid_id = vid_src.split('/')[4]
-vid_id = vid_id.split('?')[0]
-print(vid_id)
-
-# creating our own youtube links
-yt_link = f'https://youtube.com/watch?v={vid_id}'
-print(yt_link)
-print()
+    
+    csv_writer.writerow([headline, summary, yt_link])
+csv_file.close()
+    

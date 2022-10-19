@@ -17,6 +17,11 @@ soup = BeautifulSoup(r.content, "html5lib")
 quotes =[]
 table = soup.find("div", attrs={"id":"all_quotes"})
 
+csv_output = open('quotes.csv', 'w')
+csv_write = csv.writer(csv_output)
+csv_write.writerow(['theme', 'url', 'img', 'lines', 'author'])
+
+
 for row in table.findAll("div", attrs={'class': 'col-6 col-lg-3 text-center margin-30px-bottom sm-margin-30px-top'}):
     quote = {}
     quote['theme'] = row.h5.text
@@ -26,11 +31,7 @@ for row in table.findAll("div", attrs={'class': 'col-6 col-lg-3 text-center marg
     quote['author'] = row.img['alt'].split(" #")[1]
     quotes.append(quote)
     
-# Storing the quotes in a csv file
-
-filename = 'inspirational_quotes.csv'
-with open(filename, 'w', newline='') as f:
-    w = csv.DictWriter(f,['theme','url','img','lines','author'])
-    w.writeheader()
-    for quote in quotes:
-        w.writerow(quote)
+    
+    csv_write.writerow([quote['theme'], quote['url'], quote['img'], quote['lines'], quote['author']])
+    
+csv_output.close()    

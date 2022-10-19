@@ -7,7 +7,6 @@ target_port = 9997
 udp_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # send some data
-
 udp_client.sendto(b"AAABBBCC", (target_host, target_port))
 
 #receive some data
