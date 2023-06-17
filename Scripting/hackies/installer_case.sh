@@ -32,7 +32,7 @@ do
 
 	read action;
 
-	case $action in
+	case $1 in
 		1) echo " Update your system."
 			sudo apt update 2>>$errolog
 			check_exit_status
