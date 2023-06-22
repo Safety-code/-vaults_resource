@@ -1,0 +1,25 @@
+#!bin/bash
+#Practice if case
+# read-menu
+
+clear
+echo "
+Please Select:
+
+1. Display System Information
+2. Display Disk Space
+3. Display Home Space Utilization
+4. Quit
+"
+read -p "Enter Selection [0-3] "
+
+case "$REPLY" in
+    0)  echo "Program terminated."
+        exit
+        ;;
+    1)  echo "Hostname: $HOSTNAME"
+        uptime
+        ;;
+    2)  df -h 
+        ;;
+    3)  

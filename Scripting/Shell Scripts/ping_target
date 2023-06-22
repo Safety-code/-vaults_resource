@@ -1,0 +1,20 @@
+#!/bin/bash
+#Pinging Scripts
+
+metasploitable=192.168.12.128
+windows10=192.168.12.133
+
+echo "Resolve target domain ..."
+	nslookup $1
+sleep 2
+echo "Check if metasploitable target is reachable.."
+	ping -c 5 $metasploitable
+echo
+
+sleep 3
+echo "Check windows target is reachable..."
+	ping -c 5 $windows10
+
+sleep 3
+echo "Any other target.."
+	ping -c 5 $1
