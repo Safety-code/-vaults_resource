@@ -10,12 +10,37 @@
 # except:
 #     print('Please enter a number')
 
+
+
 #SCORE PROGRAMME
 # Entered score should be between 0.0 and 1.0
-score = input('Enter your score: ')
-try:
-    score = float(score)
+# score = input('Enter your score: ')
+# try:
+#     score = float(score)
 
+#     if score >=0.9 and score <= 1.0:
+#         print(f"This score {score} is a Grade A")
+#     elif score >=0.8 and score < 0.9:
+#         print(f"This score {score} is a Grade B")
+#     elif score >=0.7 and score < 0.8:
+#         print(f"This score {score} is a Grade C")
+#     elif score >=0.6 and score < 0.7:
+#         print(f"This score {score} is a Grade D")
+#     elif score <=0.6:
+#         print(f"This score {score} is a Grade F")
+#     else:
+#         print('Bad score, out of range')
+# except:
+#     print("Error, enter decimal between 0.0-1.0")
+
+
+
+# score = input('Enter your score: ')
+# score = float(score)
+
+def compute_grade(score):
+
+    score = float(score)
     if score >=0.9 and score <= 1.0:
         print(f"This score {score} is a Grade A")
     elif score >=0.8 and score < 0.9:
@@ -28,5 +53,7 @@ try:
         print(f"This score {score} is a Grade F")
     else:
         print('Bad score, out of range')
-except:
-    print("Error, enter decimal between 0.0-1.0")
+    return score
+
+final_score = compute_grade(0.5)
+print(final_score)  
