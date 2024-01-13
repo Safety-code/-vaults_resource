@@ -57,3 +57,74 @@ def compute_grade(score):
 
 final_score = compute_grade(0.5)
 print(final_score)  
+
+
+#STRINGS
+greeting='hello world'
+new_greeting = 'j' + greeting[1:]
+print(new_greeting)
+
+def count(letter, string):
+    word = 'banana'
+    count = 0
+    for letter in word:
+        if letter == 'a':
+            count = count + 1
+    print(count)
+
+count_letter = count('a', 'banana')
+print(count_letter)
+
+data = 'From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008'
+atpos = data.find('@')
+print(atpos)
+
+spos = data.find(' ',atpos)
+print(spos)
+
+host = data[atpos+1:spos]
+print(host)
+
+camel = 42
+print('%d' % camel)
+
+while True:
+    line = input('>')
+    if line.startswith('#'):
+        continue
+    if line == 'done':
+        break
+    print(line)
+print('Done!')
+
+
+
+# READING FILES AND EXCEPTIONS
+file_path = './files/pi_digits.txt'
+with open(file_path) as file_object:
+    contents = file_object.read()
+print(contents.rstrip())
+
+# reading file contents line by line using for loop
+file_path = './files/pi_digits.txt'
+with open(file_path) as file_object:
+    for line in file_object:
+        print(line.rstrip())
+
+
+#Using the file contents outside the 'with' statement
+file_path = './files/pi_digits.txt'
+with open(file_path) as file_object:
+    lines = file_object.readlines()
+
+pi_string = ''
+for line in lines:
+    pi_string += line.strip()
+
+birthday = input('\nEnter your birth date in the form yymmdd: ')
+if birthday in pi_string:
+    print('Your birthday appears in the first millionth digit of pi')
+else:
+    print("Your birthday does not appear in the first millionth digit of pi")
+print(f"{pi_string[(1+1):52]}...")
+print(len(pi_string))

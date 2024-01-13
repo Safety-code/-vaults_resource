@@ -249,3 +249,15 @@ print(car_profile)
 
 car_profile = car_info('Buggati', 'Veron', location='USA', color='Mate Green', tow_package=True)
 print(car_profile)
+
+# EXERCISE 6.14
+
+data = 'X-DSPAM-Confidence:0.8475'
+colon = data.find(':')
+print(colon)
+num = data[colon + 1:]
+print(num)
+print(float(num)) # Converts string(num) to floating point number
+
+
+# 10-1 LEARNING PYTHON 

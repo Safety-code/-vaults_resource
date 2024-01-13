@@ -1,0 +1,3 @@
+In python you can just assign a value to a variable instead of first declaring.
+In python you can define functions with the 'def' keyword.
+In python you can use addition in variable slicing and treat integers as strings.
