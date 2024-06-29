@@ -1,15 +1,14 @@
 import argparse
 
-# parser = argparse.ArgumentParser()
-# parser.add_argument("square", help="display the square of a number", type=int)
-# args = parser.parse_args()
-
-# print(args.square**2)
+parser = argparse.ArgumentParser()
+parser.add_argument("square", help="display the square of a number", type=int)
+args = parser.parse_args()
+print(args.square**2)
 
 
 # #adding optional arguemnt #short options
 
-# parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser()
 parser.add_argument("-v","--verbose", help="increase output verbosity", action="store_true")
 args = parser.parse_args()
 if args.verbose:

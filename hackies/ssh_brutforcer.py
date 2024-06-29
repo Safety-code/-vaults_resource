@@ -9,7 +9,7 @@ from os import path
 #adding command line arguemnt
 def get_args():
     """Function to get command-line arguments"""
-    parser = argparse.ArgumentParser(description="Command-line argument parser for bruteforce attack script")
+    parser = argparse.ArgumentParser(description="Command-line argument parser for ssh bruteforce attack script")
     parser.add_argument("target", help="Host to attack on e.g 10.10.10.10")
     parser.add_argument("-p", "--port", dest="port", default="22", required=False, help="Port to attack on (default is: 22)")
     parser.add_argument("-w", "--wordlist", dest="wordlist", required=True, type=str, help="Path to wordlist (/path/to/wordlist.txt)")

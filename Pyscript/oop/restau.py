@@ -9,9 +9,9 @@ class Restaurant:
 
     def open_restaruant(self):
         """Describes when the restaurant opens"""
-        print(f"The restaurant, {self.restaurant_name} is open... ")
+        print(f"The restaurant,br {self.restaurant_name} is open... ")
 
-#first instance of the class retaurant class
+#first instance of the class retaurant 
 restaurant = Restaurant("Pizzaman", "jollof rice")
 print(f"{restaurant.restaurant_name}, sells chicken pizza")
 print(f"{restaurant.cuisine_type} is the most popular meal sold by {restaurant.restaurant_name} ")
